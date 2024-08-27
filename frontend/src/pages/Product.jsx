@@ -30,8 +30,6 @@ const Product = () => {
     // }
   }, [productId, products]);
 
-  console.log(productData);
-
   return (
     <div>
       {productData ? (
