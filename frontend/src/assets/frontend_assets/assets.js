@@ -58,6 +58,7 @@ import logo from "./logo.png";
 import hero_img from "./hero_img.png";
 import hero_lady from "./hero_lady.png";
 import cart_icon from "./cart_icon.png";
+import chapa_logo from "./chapa_logo.png";
 import bin_icon from "./bin_icon.png";
 import dropdown_icon from "./dropdown_icon.png";
 import exchange_icon from "./exchange_icon.png";
@@ -79,6 +80,7 @@ export const assets = {
   hero_img,
   hero_lady,
   cart_icon,
+  chapa_logo,
   dropdown_icon,
   exchange_icon,
   profile_icon,
