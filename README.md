@@ -1,11 +1,8 @@
-````markdown
 # React E-Commerce Website
 
 ## Overview
 
 This project is a modern e-commerce website built with React, allowing users to browse and purchase clothing items. Key features include filtering products by sex and size, adding items to the cart, and completing payments using the Chapa payment gateway.
-
-![Logo](frontend/src/assets/frontend_assets/logo.png)
 
 ## Features
 
@@ -24,8 +21,6 @@ This project is a modern e-commerce website built with React, allowing users to 
    ```bash
    git clone https://github.com/Yoseph-Gebeyehu/E-Commerce-Website.git
    ```
-````
-
 2. Install dependencies:
    ```bash
    npm install
@@ -34,7 +29,3 @@ This project is a modern e-commerce website built with React, allowing users to 
    ```bash
    npm start
    ```
-
-```
-
-```
