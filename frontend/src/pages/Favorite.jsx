@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/frontend_assets/assets";
 import Title from "../components/Title";
+import { Link } from "react-router-dom";
 
 const Favorite = () => {
   const { getFavoriteProducts, currency, toggleFavorite } =
@@ -27,11 +28,18 @@ const Favorite = () => {
               key={product._id}
               className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col border rounded-lg overflow-hidden"
             >
-              <img
-                src={product.image[0]}
-                alt={product.name}
-                className="w-full h-auto object-cover"
-              />
+              <Link
+                className="text-gray-700 cursor-pointer"
+                to={`/product/${product._id}`}
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={product.image[0]}
+                    alt={product.name}
+                    className="w-full h-auto object-cover hover:scale-110 trasnition ease-in-out"
+                  />
+                </div>
+              </Link>
               <div className="p-4 flex flex-col flex-grow">
                 <h3 className="font-medium text-xl mb-2">{product.name}</h3>
                 <p className="text-gray-500 mb-4">{product.description}</p>
@@ -42,6 +50,7 @@ const Favorite = () => {
                     alt="Favorite Icon"
                     className="w-4 min-w-5 cursor-pointer"
                   />
+                  {product.bestseller ? <h3>Bestseller</h3> : <></>}
                   <p className="text-lg font-bold">
                     {currency}
                     {product.price}
