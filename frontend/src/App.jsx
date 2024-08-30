@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Searchbar from "./components/Searchbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Favorite from "./pages/Favorite";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/favorites" element={<Favorite />} />
       </Routes>
       <Footer />
     </div>
