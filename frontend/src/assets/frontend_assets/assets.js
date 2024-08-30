@@ -63,6 +63,7 @@ import bin_icon from "./bin_icon.png";
 import dropdown_icon from "./dropdown_icon.png";
 import exchange_icon from "./exchange_icon.png";
 import favorite_icon from "./favorite.png";
+import favorite_filled_icon from "./favorite_filled.png";
 import profile_icon from "./profile_icon.png";
 import quality_icon from "./quality_icon.png";
 import search_icon from "./search_icon.png";
@@ -85,6 +86,7 @@ export const assets = {
   dropdown_icon,
   exchange_icon,
   favorite_icon,
+  favorite_filled_icon,
   profile_icon,
   quality_icon,
   search_icon,

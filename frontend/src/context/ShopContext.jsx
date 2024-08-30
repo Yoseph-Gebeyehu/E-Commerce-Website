@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+// ShopContext.jsx
+import { createContext, useState } from "react";
 import { products } from "../assets/frontend_assets/assets";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +12,7 @@ const ShopContextProvider = (props) => {
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
+  const [favoriteItems, setFavoriteItems] = useState({});
   const navigate = useNavigate();
 
   const addToCart = async (itemId, size) => {
@@ -29,7 +31,6 @@ const ShopContextProvider = (props) => {
       cartData[itemId] = {};
       cartData[itemId][size] = 1;
     }
-
     setCartItems(cartData);
   };
 
@@ -45,6 +46,26 @@ const ShopContextProvider = (props) => {
       }
     }
     return totalCount;
+  };
+
+  const toggleFavorite = (itemId) => {
+    setFavoriteItems((prevFavorites) => {
+      const newFavorites = { ...prevFavorites };
+      if (newFavorites[itemId]) {
+        delete newFavorites[itemId];
+      } else {
+        newFavorites[itemId] = true;
+      }
+      return newFavorites;
+    });
+  };
+
+  const getFavoriteCount = () => {
+    return Object.keys(favoriteItems).length;
+  };
+
+  const getFavoriteProducts = () => {
+    return products.filter((product) => favoriteItems[product._id]);
   };
 
   const updateQuantity = async (itemId, size, quantity) => {
@@ -82,7 +103,12 @@ const ShopContextProvider = (props) => {
     updateQuantity,
     getCartAmount,
     navigate,
+    toggleFavorite,
+    getFavoriteCount,
+    getFavoriteProducts,
+    favoriteItems,
   };
+
   return (
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
   );
