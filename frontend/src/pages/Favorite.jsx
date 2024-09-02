@@ -61,7 +61,11 @@ const Favorite = () => {
           ))}
         </div>
       ) : (
-        <p>No favorites yet!</p>
+        // <p>No favorites yet!</p>
+        <div className="grid gap-5 justify-center items-center">
+          <img src={assets.no_fav_icon} />
+          <p>No favorite item here!</p>
+        </div>
       )}
     </div>
   );
