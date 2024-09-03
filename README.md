@@ -14,6 +14,7 @@ This project is a modern e-commerce website built with React, allowing users to 
 
 - **Frontend**: React, TailwindCSS, React Router
 - **Payment Gateway**: Chapa
+- **Authentication**: Users can sign up, log in, and manage their accounts using Firebase authentication.
 
 ## Getting Started
 
